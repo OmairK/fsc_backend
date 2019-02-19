@@ -20,6 +20,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 
 urlpatterns = [
+    path('users/', include('users.urls')),
     path('form/',include('form_to_email.urls')),
     path('admin/', admin.site.urls),
     path('tournaments/',include('tournaments.urls')),

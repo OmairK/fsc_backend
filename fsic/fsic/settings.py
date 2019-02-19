@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'rest_framework',
+    'users.apps.UsersConfig',
     'tournaments.apps.TournamentsConfig',
     'form_to_email.apps.FormToEmailConfig',
     'django.contrib.admin',
