@@ -1,43 +1,44 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import status
-from rest_framework.generics import ListCreateAPIView
+from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from pymongo import MongoClient
+
 from django.http import HttpResponse
 from bson import Binary, Code
 from bson.json_util import dumps
 from tournaments.serializers import *
 from tournaments.models import *
-class TournamentsListITF(ListCreateAPIView):
+
+class TournamentsListITF(generics.CreateAPIView):
     
     queryset = TournamentITF.objects.all()
     serializer_class = TournamentITFSerializer 
 
-class TournamentsListFSC(ListCreateAPIView):
+class TournamentsListFSC(generics.CreateAPIView):
     queryset = TournamentFSC.objects.all()
     serializer_class = TournamentFSCSerializer
 
-class PlayerRankingMS(ListCreateAPIView):
+class PlayerRankingMS(generics.CreateAPIView):
     
     queryset = PlayerRankingsMS.objects.all()
-    serializer_class = PlayerRankingsSerializer
+    serializer_class = PlayerRankingsSerializerMS
 
-class PlayerRankingMD(ListCreateAPIView):
+class PlayerRankingMD(generics.CreateAPIView):
     
     queryset = PlayerRankingsMD.objects.all()
-    serializer_class = PlayerRankingsSerializer
+    serializer_class = PlayerRankingsSerializerMD
 
-class PlayerRankingFS(ListCreateAPIView):
+class PlayerRankingFS(generics.CreateAPIView):
     
     queryset = PlayerRankingsFS.objects.all()
-    serializer_class = PlayerRankingsSerializer
+    serializer_class = PlayerRankingsSerializerFS
 
-class PlayerRankingFD(ListCreateAPIView):
+class PlayerRankingFD(generics.CreateAPIView):
     
     queryset = PlayerRankingsFD.objects.all()
-    serializer_class = PlayerRankingsSerializer
+    serializer_class = PlayerRankingsSerializerFD
 
     
 
