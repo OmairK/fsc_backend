@@ -27,35 +27,31 @@ class TournamentsListFSC(generics.CreateAPIView):
 
 class PlayerRankingMS(generics.CreateAPIView):
     """
-    Create new Player Ranking MS instance
+    Create new Player Ranking Male Singles instance
     """
     queryset = PlayerRankingsMS.objects.all()
     serializer_class = PlayerRankingsSerializerMS
 
 class PlayerRankingMD(generics.CreateAPIView):
     """
-    Create new Player Ranking MD instance
+    Create new Player Ranking Male Doubles instance
     """
     queryset = PlayerRankingsMD.objects.all()
     serializer_class = PlayerRankingsSerializerMD
 
 class PlayerRankingFS(generics.CreateAPIView):
     """
-    Create new Player Ranking FS instance
+    Create new Player Ranking Female Singles instance
     """
     queryset = PlayerRankingsFS.objects.all()
     serializer_class = PlayerRankingsSerializerFS
 
 class PlayerRankingFD(generics.CreateAPIView):
     """
-    Create new Player Ranking FD instance
+    Create new Player Ranking Female Doubles instance
     """
     queryset = PlayerRankingsFD.objects.all()
     serializer_class = PlayerRankingsSerializerFD
-
-    
-
-
 
 
 # Create your views here.
