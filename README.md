@@ -1,33 +1,35 @@
 ### Fans Sports Club Mobile app backend 
 
 
-#### API Endpoints:
-######  All the end points are for Creating and Listing 
-- ITF tournaments
+#### Postgresql setup:
+- Install postgresql for database (ubuntu) 
 ```
-localhost:8000/tournaments/itf/
+$ sudo apt-get install postgresql postgresql-contrib
+$ service postgresql start
+$ sudo su postgres
+$ psql
+$ \l
+$ CREATE DATABASE mydatabase_phase1;
 ```
-- FSC tournaments 
+
+#### Django setup:
+- Create a virtaulenv
 ```
-localhost:8000/tournaments/fsc/
+$ virtualenv -p python3 venv
+$ source venv/bin/activate
 ```
-- Player rankings Males Singles(MS)
+- Install the dependencies
 ```
-localhost:8000/tournaments/rankpms/
+$ pip install -r requirements.txt
 ```
-- Player rankings Males Doubles(MD)
+-Setup the migrations
 ```
-localhost:8000/tournaments/rankpmd/
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
 ```
-- Player rankings Female Singles(FS)
+-To flud the database test data
 ```
-localhost:8000/tournaments/rankpfs/
-```
-- Player rankings Female Doubles(FD)
-```
-localhost:8000/tournaments/rankpfd/
-```
-- Creating users
-```
-localhost:8000/users/api/new-account/
+$ cd Test_data
+$ python testdata.py
 ```
