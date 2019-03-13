@@ -6,12 +6,10 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from django.http import HttpResponse
-from bson import Binary, Code
-from bson.json_util import dumps
 from tournaments.serializers import *
 from tournaments.models import *
 
-class TournamentsListITF(generics.CreateAPIView):
+class TournamentsListITF(generics.ListAPIView):
     """
     Create new ITF (International Tennis Federation) Tournament instance
     """
@@ -25,33 +23,20 @@ class TournamentsListFSC(generics.CreateAPIView):
     queryset = TournamentFSC.objects.all()
     serializer_class = TournamentFSCSerializer
 
-class PlayerRankingMS(generics.CreateAPIView):
+class PlayerRankingMS(generics.ListAPIView):
     """
     Create new Player Ranking Male Singles instance
     """
     queryset = PlayerRankingsMS.objects.all()
     serializer_class = PlayerRankingsSerializerMS
 
-class PlayerRankingMD(generics.CreateAPIView):
+class PlayerRankingMD(generics.ListAPIView):
     """
     Create new Player Ranking Male Doubles instance
     """
     queryset = PlayerRankingsMD.objects.all()
     serializer_class = PlayerRankingsSerializerMD
 
-class PlayerRankingFS(generics.CreateAPIView):
-    """
-    Create new Player Ranking Female Singles instance
-    """
-    queryset = PlayerRankingsFS.objects.all()
-    serializer_class = PlayerRankingsSerializerFS
-
-class PlayerRankingFD(generics.CreateAPIView):
-    """
-    Create new Player Ranking Female Doubles instance
-    """
-    queryset = PlayerRankingsFD.objects.all()
-    serializer_class = PlayerRankingsSerializerFD
 
 
 # Create your views here.

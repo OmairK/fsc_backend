@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'fsic.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabse',
+        'NAME': 'mydatabase_phase1',
         'USER': 'postgres',
         'PASSWORD': 'test123',
         'HOST': '127.0.0.1',

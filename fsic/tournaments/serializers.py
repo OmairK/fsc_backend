@@ -1,30 +1,21 @@
 from rest_framework import serializers
-from tournaments.models import TournamentFSC,TournamentITF,PlayerRankingsMS,PlayerRankingsMD,PlayerRankingsFS,PlayerRankingsFD
+from tournaments.models import TournamentFSC,TournamentITF,PlayerRankingsMS,PlayerRankingsMD
 
 class TournamentITFSerializer(serializers.ModelSerializer):
     class Meta:
         model = TournamentITF
-        fields = ('id','name','description','venue','start_date','end_date','surface','grade','link')
+        fields = ('id','name','venue','start_date','end_date','surface','grade','link','website')
 
 class PlayerRankingsSerializerMS(serializers.ModelSerializer):
     class Meta:
         model = PlayerRankingsMS
-        fields =('id','name','rank')
+        fields =('id','name','rank','movement','dob','events','points')
 
 class PlayerRankingsSerializerMD(serializers.ModelSerializer):
     class Meta:
         model = PlayerRankingsMD
-        fields =('id','name','rank')
+        fields =('id','name','rank','movement','dob','events','points')
         
-class PlayerRankingsSerializerFS(serializers.ModelSerializer):
-    class Meta:
-        model = PlayerRankingsFS
-        fields =('id','name','rank')
-
-class PlayerRankingsSerializerFD(serializers.ModelSerializer):
-    class Meta:
-        model = PlayerRankingsFD
-        fields =('id','name','rank')
 
 class TournamentFSCSerializer(serializers.ModelSerializer):
     class Meta:
