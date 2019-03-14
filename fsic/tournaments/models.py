@@ -31,8 +31,9 @@ class PlayerRankingsMD(models.Model):   #Male Doubles
 
 
 class TournamentFSC(models.Model):
-    name = models.CharField(max_length = 100)
-    age_group = models.CharField(max_length = 50)
-    venue = models.CharField(max_length = 100)
+    name = models.CharField(max_length = 1000)
+    age_group = models.CharField(max_length = 500)
+    venue = models.CharField(max_length = 1000)
+    date = models.CharField(max_length=20)
     description = models.CharField(max_length = 1000)
 
