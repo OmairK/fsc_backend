@@ -16,7 +16,7 @@ class TournamentsListITF(generics.ListAPIView):
     queryset = TournamentITF.objects.all()
     serializer_class = TournamentITFSerializer 
 
-class TournamentsListFSC(generics.CreateAPIView):
+class TournamentsListFSC(generics.ListAPIView):
     """
     Create new FSC Tournament instance
     """

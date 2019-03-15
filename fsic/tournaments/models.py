@@ -3,13 +3,14 @@ from django.db import models
 
 class TournamentITF(models.Model):
     name = models.CharField(max_length = 100)
+    host_nation = models.CharField(max_length= 100,blank=True,null = True)
     venue = models.CharField(max_length = 100)
     start_date = models.IntegerField()
     end_date = models.IntegerField()
     surface = models.CharField(max_length = 100)
     grade = models.CharField(max_length = 100)
     link = models.CharField(max_length = 100)
-    website = models.CharField(max_length = 100)
+    website = models.CharField(max_length = 100,blank = True,null = True)
 
 
 class PlayerRankingsMS(models.Model):  #Male Singles

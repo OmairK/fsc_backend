@@ -42,9 +42,9 @@ for i in range (75,90):
                         l['{}'.format(b[0])]=b[1]
                         print(b[0]+b[1])
                     elif(z==6):
-                        d = b[1].replace('/','')
-                        b[1]=d
-                        l['{}'.format(b[0])]=b[1]
+                        d = b[1].split('/')
+                        c = d[2]+d[1]+d[0].strip()
+                        l['{}'.format(b[0])] = c
 
 
 
