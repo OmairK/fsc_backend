@@ -13,23 +13,15 @@ class TournamentITF(models.Model):
     website = models.CharField(max_length = 100,blank = True,null = True)
 
 
-class PlayerRankingsMS(models.Model):  #Male Singles
-    name = models.CharField(max_length = 50)
+class PlayerRankingsMS(models.Model):  #Male Singles/Doubles 
+    name = models.CharField(max_length = 150)
     rank = models.IntegerField()
     movement = models.IntegerField()
-    dob = models.IntegerField()
+    dob = models.CharField(max_length = 50)
     events = models.IntegerField()
-    points = models.IntegerField()
-
-class PlayerRankingsMD(models.Model):   #Male Doubles
-    name = models.CharField(max_length = 50)
-    rank = models.IntegerField()
-    movement = models.IntegerField()
-    dob = models.IntegerField()
-    events = models.IntegerField()
-    points = models.IntegerField()
-
-
+    points = models.FloatField()
+    agegroup = models.IntegerField()
+    category = models.CharField(max_length = 10)
 
 class TournamentFSC(models.Model):
     name = models.CharField(max_length = 1000)

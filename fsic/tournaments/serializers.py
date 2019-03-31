@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from tournaments.models import TournamentFSC,TournamentITF,PlayerRankingsMS,PlayerRankingsMD
+from tournaments.models import TournamentFSC,TournamentITF,PlayerRankingsMS
 
 class TournamentITFSerializer(serializers.ModelSerializer):
     class Meta:
@@ -9,12 +9,9 @@ class TournamentITFSerializer(serializers.ModelSerializer):
 class PlayerRankingsSerializerMS(serializers.ModelSerializer):
     class Meta:
         model = PlayerRankingsMS
-        fields =('id','name','rank','movement','dob','events','points')
+        fields =('id','name','rank','movement','dob','events','points','ageGroup','category')
 
-class PlayerRankingsSerializerMD(serializers.ModelSerializer):
-    class Meta:
-        model = PlayerRankingsMD
-        fields =('id','name','rank','movement','dob','events','points')
+
         
 
 class TournamentFSCSerializer(serializers.ModelSerializer):

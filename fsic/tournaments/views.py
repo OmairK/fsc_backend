@@ -13,7 +13,7 @@ class TournamentsListITF(generics.ListAPIView):
     """
     Create new ITF (International Tennis Federation) Tournament instance
     """
-    queryset = TournamentITF.objects.all()
+    queryset = TournamentITF.objects.all().order_by('start_date')
     serializer_class = TournamentITFSerializer 
 
 class TournamentsListFSC(generics.ListAPIView):
@@ -25,18 +25,11 @@ class TournamentsListFSC(generics.ListAPIView):
 
 class PlayerRankingMS(generics.ListAPIView):
     """
-    Create new Player Ranking Male Singles instance
+    Create new Player Ranking Male Singles/Doubles instance
     """
     queryset = PlayerRankingsMS.objects.all()
     serializer_class = PlayerRankingsSerializerMS
 
-class PlayerRankingMD(generics.ListAPIView):
-    """
-    Create new Player Ranking Male Doubles instance
-    """
-    queryset = PlayerRankingsMD.objects.all()
-    serializer_class = PlayerRankingsSerializerMD
 
 
 
-# Create your views here.
