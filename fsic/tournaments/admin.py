@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import TournamentFSC,TournamentITF
+
+
+
+
+
+admin.site.register(TournamentFSC)
+admin.site.register(TournamentITF)
