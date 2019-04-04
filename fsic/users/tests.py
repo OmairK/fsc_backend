@@ -3,6 +3,21 @@ from rest_framework.test import APITestCase
 from django.contrib.auth.models import User
 from rest_framework import status
 
+
+
+
+class Test_Users_Urls(SimpleTestCase):
+
+    def test_user_profile_url_is_resolved(self):
+        url = reverse('user-profile-list')
+        self.assertEquals(resolve(url).func, user-profile)
+
+
+    def test_create_user_profile_is_resolved(self):
+        url = reverse('user-profile-create')
+        self.assertEquals(resolve(url).func, user-pofile-create)
+
+
 class AccountsTest(APITestCase):
     def setUp(self):
          
@@ -126,4 +141,3 @@ class AccountsTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEqual(User.objects.count(), 1)
         self.assertEqual(len(response.data['email']), 1)
-

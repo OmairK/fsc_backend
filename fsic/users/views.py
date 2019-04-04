@@ -13,7 +13,12 @@ class UserProfileSearch(generics.ListAPIView):
     serializer_class = UserProfileSerializer
 
 
-    
+class CreateUserProfile(generics.CreateAPIView):
+    """
+    Create new User profile (Update in phase 2 with user registrations)
+    """
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
 
 
 

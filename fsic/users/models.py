@@ -57,6 +57,8 @@ class UserProfile(models.Model):
         unique=True,
         null=True
         )
+    # profile_photo = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
+    
     class Meta:
         ordering = ('name',)
     
