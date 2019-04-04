@@ -26,6 +26,13 @@ class PlayerRankingsMS(models.Model):  # Male Singles/Doubles
     agegroup = models.IntegerField()
     category = models.CharField(max_length=10)
 
+    class Meta:
+        ordering = ['-rank']
+    
+    def __str__(self):
+        return self.name
+    
+
 
 class TournamentFSC(models.Model):
     name = models.CharField(max_length=1000)
