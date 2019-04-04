@@ -51,7 +51,7 @@ class UserProfile(models.Model):
     role_model = models.CharField(
         max_length=100,
         null=True,
-        )  ##Format:yyyymmdd 
+        )   
     cien_no = models.CharField(
         max_length=10,
         unique=True,

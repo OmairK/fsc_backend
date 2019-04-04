@@ -11,21 +11,21 @@ from tournaments.models import *
 
 class TournamentsListITF(generics.ListAPIView):
     """
-    Create new ITF (International Tennis Federation) Tournament instance
+    List all ITF (International Tennis Federation) Tournaments
     """
     queryset = TournamentITF.objects.all().order_by('start_date')
     serializer_class = TournamentITFSerializer 
 
 class TournamentsListFSC(generics.ListAPIView):
     """
-    Create new FSC Tournament instance
+    List FSC Tournaments
     """
     queryset = TournamentFSC.objects.all()
     serializer_class = TournamentFSCSerializer
 
 class PlayerRankingMS(generics.ListAPIView):
     """
-    Create new Player Ranking Male Singles/Doubles instance
+    List Player Ranking Male Singles/Doubles
     """
     queryset = PlayerRankingsMS.objects.all()
     serializer_class = PlayerRankingsSerializerMS

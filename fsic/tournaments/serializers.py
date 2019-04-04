@@ -11,9 +11,6 @@ class PlayerRankingsSerializerMS(serializers.ModelSerializer):
         model = PlayerRankingsMS
         fields =('id','name','rank','movement','dob','events','points','ageGroup','category')
 
-
-        
-
 class TournamentFSCSerializer(serializers.ModelSerializer):
     class Meta:
         model = TournamentFSC

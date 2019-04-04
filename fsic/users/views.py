@@ -7,10 +7,11 @@ from rest_framework import generics
 
 class UserProfileSearch(generics.ListAPIView):
     """ 
-    List all the user  profiles. 
+    List all the user profiles. 
     """
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
+
 
     
 
