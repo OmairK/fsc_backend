@@ -46,7 +46,6 @@ class UserProfile(models.Model):
         )
     user_email = models.EmailField( 
         max_length=254,
-        primary_key=True,
         )
     role_model = models.CharField(
         max_length=100,
@@ -57,7 +56,8 @@ class UserProfile(models.Model):
         unique=True,
         null=True
         )
-    # profile_photo = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
+    player_id = models.AutoField(primary_key=True)
+    profile_photo = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
     
     class Meta:
         ordering = ('name',)

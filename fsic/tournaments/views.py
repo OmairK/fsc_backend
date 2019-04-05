@@ -13,7 +13,7 @@ class TournamentsListITF(generics.ListAPIView):
     """
     List all ITF (International Tennis Federation) Tournaments
     """
-    queryset = TournamentITF.objects.all().order_by('start_date')
+    queryset = TournamentITF.objects.filter(start_date_gt=20190000)
     serializer_class = TournamentITFSerializer 
 
 class TournamentsListFSC(generics.ListAPIView):

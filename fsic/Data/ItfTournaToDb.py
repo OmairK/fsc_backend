@@ -1,6 +1,6 @@
 import psycopg2
 
-f = open("Toru.txt","r")
+f = open("ITF_tournaments.txt","r")
 # m = open("Test.txt","w")
 
 months  = {'January': '01' ,'February':'02','March':'03','April':'04','May':'05','June':'06','July':'07','August':'08','September':'09','October':'10','November':'11','December':'12'}
@@ -18,20 +18,20 @@ for lines in f:
     for index in range(9):
 
         a = f.readline()
-        print(a)
+        # print(a)
         if a!='\n':
             if a.startswith('N'):
-                print(a)
+                # print(a)
                 b=a.split(':')
                 c=b[1].rstrip('\n')
                 lst[0]=c
             elif a.startswith('H'):
-                print(a)
+                # print(a)
                 b=a.split(':')
                 c=b[1].rstrip('\n')
                 lst[1]=c
             elif a.startswith('D'):
-                print(a)
+                # print(a)
                 b=a.split(':')
                 c=b[1].rstrip('\n')
                 startDate,endDate = c.split("-")
@@ -44,27 +44,27 @@ for lines in f:
                 lst[2]=startDateInt
                 lst[3]=endDateInt
             elif a.startswith('C'):
-                print(a)
+                # print(a)
                 b=a.split(':')
                 c=b[1].rstrip('\n')
                 lst[4]=c
             elif a.startswith('S'):
-                print(a)
+                # print(a)
                 b=a.split(':')
                 c=b[1].rstrip('\n')
                 lst[5]=c
             elif a.startswith('V'):
-                print(a)
+                # print(a)
                 b=a.split(':')
                 c=b[1].rstrip('\n')
                 lst[6]=c
             elif a.startswith('u'):
-                print(a)
+                # print(a)
                 b=a.split('l :')
                 c=b[1].rstrip('\n')
                 lst[8]=c
             elif a.startswith('W'):
-                print(a)
+                # print(a)
                 b=a.split('e:')
                 c=b[1].rstrip('\n')
                 lst[7]=c
@@ -73,14 +73,14 @@ for lines in f:
 
             # print('new line')
         else:
-            print('++++++++')
+            # print('++++++++')
             d=f.readline()
-            print(d)
+            # print(d)
             break
 
     cur.execute("INSERT INTO tournaments_tournamentitf(name,host_nation,grade,start_date,end_date,surface,venue,website,url) VALUES (%s, %s,%s,%s, %s,%s,%s, %s,%s)",(lst[0],lst[1],lst[4],lst[2],lst[3],lst[5],lst[6],lst[7],lst[8]))
     conn.commit()
-    print(lst)
+    # print(lst)
     # m.write("{} \n".format(lst))
 
         

@@ -16,5 +16,7 @@ for lines in playerJs:
     curr.execute("INSERT INTO tournaments_tournamentfsc(name,age_group,venue,date,description) VALUES (%s, %s,%s,%s, %s)",(a,b,c,d,e))
     conn.commit()
 
+print('FSC TO DB : CODE 200')
+
 curr.close()
 conn.close()

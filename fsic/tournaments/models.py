@@ -23,8 +23,8 @@ class PlayerRankingsMS(models.Model):  # Male Singles/Doubles
     dob = models.CharField(max_length=50)
     events = models.IntegerField()
     points = models.FloatField()
-    agegroup = models.IntegerField()
-    category = models.CharField(max_length=10)
+    agegroup = models.IntegerField() # +35 +40 +45 +50 +55 +60 +65 +70 +75
+    category = models.CharField(max_length=10) # Singles - S; Doubles -D
 
     class Meta:
         ordering = ['-rank']
@@ -40,6 +40,9 @@ class TournamentFSC(models.Model):
     venue = models.CharField(max_length=1000)
     date = models.CharField(max_length=20)
     description = models.CharField(max_length=1000)
+    coordinator_contact = models.IntegerField() # Contact No of the event coordinator
+    coordinator_email = models.EmailField(max_length=254)
+    coordinator_name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name

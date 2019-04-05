@@ -21,5 +21,7 @@ for lines in playerJs:
     curr.execute("INSERT INTO tournaments_playerrankingsms(name,rank,movement,dob,events,points,agegroup,category) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",(b,a,c,e,f,g,h,d))
     conn.commit()
 
+print('Player Rank To DB : CODE 200')
+
 curr.close()
 conn.close()
