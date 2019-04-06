@@ -44,8 +44,6 @@ class TournamentFSC(models.Model):
     coordinator_contact = models.IntegerField(null=True) # Contact No of the event coordinator
     coordinator_email = models.EmailField(max_length=254,null=True)
     coordinator_name = models.CharField(max_length=50,null=True)
-    published
-
 
     def __str__(self):
         return self.name
