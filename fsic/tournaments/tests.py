@@ -21,3 +21,11 @@ class Test_FSC_Tournaments(SimpleTestCase):
     def test_event_is_in_past(self):
         pass
         
+
+
+class Test_Token_Authentication(SimpleTestCase):
+
+    def test_get_request_for_tournaments_return_200(self):
+        pass
+
+    

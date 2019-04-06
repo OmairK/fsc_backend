@@ -11,7 +11,10 @@ class TournamentITF(models.Model):
     grade = models.CharField(max_length=100)
     link = models.CharField(max_length=100)
     website = models.CharField(max_length=100, blank=True, null=True)
-
+    
+    class Meta:
+        ordering = ['start_date']
+    
     def __str__(self):
         return self.name
 
