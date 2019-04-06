@@ -8,12 +8,17 @@ from rest_framework.response import Response
 from django.http import HttpResponse
 from tournaments.serializers import *
 from tournaments.models import *
+import datetime
+
 
 class TournamentsListITF(generics.ListAPIView):
     """
-    List all ITF (International Tennis Federation) Tournaments
+    List all ITF (International Tennis Federation) Tournaments 
     """
-    queryset = TournamentITF.objects.filter(start_date_gt=20190000)
+    duration = (datetime.date.today() - datetime.timedelta(days=60)).isoformat()
+    duration = duration.split('-')
+    duration = ''.join(str(q) for q in duration) 
+    queryset = TournamentITF.objects.filter(start_date__gt=int(duration))
     serializer_class = TournamentITFSerializer 
 
 class TournamentsListFSC(generics.ListAPIView):

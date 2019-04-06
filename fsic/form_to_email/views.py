@@ -24,9 +24,9 @@ def form(body):
     message = "{}".format(body)
     send_mail(subject = subject,message = message, from_email = from_email, recipient_list = to_email, fail_silently = False)
 
-class FormToEmail(ListCreateAPIView):
-    queryset = EmailBody.objects.all()
-    serializer_class = EmailBodySerializer
+# class FormToEmail(ListCreateAPIView):
+#     queryset = EmailBody.objects.all()
+#     serializer_class = EmailBodySerializer
 
 
 # class DestroyForm(RetrieveDestroyAPIView):

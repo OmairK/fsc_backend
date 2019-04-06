@@ -38,11 +38,19 @@ class TournamentFSC(models.Model):
     name = models.CharField(max_length=1000)
     age_group = models.CharField(max_length=500)
     venue = models.CharField(max_length=1000)
-    date = models.CharField(max_length=20)
+    date = models.DateField(auto_now=False, auto_now_add=False)
     description = models.CharField(max_length=1000)
-    coordinator_contact = models.IntegerField() # Contact No of the event coordinator
-    coordinator_email = models.EmailField(max_length=254)
-    coordinator_name = models.CharField(max_length=50)
+    location_url = models.URLField(max_length=300,blank = True) # Google maps link
+    coordinator_contact = models.IntegerField(null=True) # Contact No of the event coordinator
+    coordinator_email = models.EmailField(max_length=254,null=True)
+    coordinator_name = models.CharField(max_length=50,null=True)
+    published
+
 
     def __str__(self):
         return self.name
+    
+    def takes_place_in_future(self):
+        return self.date > timezone.now() 
+
+    

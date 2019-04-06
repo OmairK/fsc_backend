@@ -32,5 +32,5 @@ $ python manage.py runserver
 ```
 - Filling the database with data
 ```
-$ ./load_data
+$ ./load_datappytho
 ```

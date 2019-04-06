@@ -14,6 +14,6 @@ class PlayerRankingsSerializerMS(serializers.ModelSerializer):
 class TournamentFSCSerializer(serializers.ModelSerializer):
     class Meta:
         model = TournamentFSC
-        fields = ('name','age_group','venue','date','description','coordinator_contact','coordinator_name','coordinator_email')
+        fields = ('name','age_group','venue','date','description','coordinator_contact','coordinator_name','coordinator_email','location_url')
 
         

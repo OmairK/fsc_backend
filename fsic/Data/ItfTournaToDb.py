@@ -11,7 +11,7 @@ def month_to_int(mon):
             return mon
 
 
-conn = psycopg2.connect(database="mydatabse", user="postgres",host='127.0.0.1', password="test123",port=5432)
+conn = psycopg2.connect(database="mydatabase_phase1", user="postgres",host='127.0.0.1', password="test123",port=5432)
 cur = conn.cursor()
 for lines in f:
     lst = [None]*9
@@ -78,7 +78,7 @@ for lines in f:
             # print(d)
             break
 
-    cur.execute("INSERT INTO tournaments_tournamentitf(name,host_nation,grade,start_date,end_date,surface,venue,website,url) VALUES (%s, %s,%s,%s, %s,%s,%s, %s,%s)",(lst[0],lst[1],lst[4],lst[2],lst[3],lst[5],lst[6],lst[7],lst[8]))
+    cur.execute("INSERT INTO tournaments_tournamentitf(name,host_nation,grade,start_date,end_date,surface,venue,website,link) VALUES (%s, %s,%s,%s, %s,%s,%s, %s,%s)",(lst[0],lst[1],lst[4],lst[2],lst[3],lst[5],lst[6],lst[7],lst[8]))
     conn.commit()
     # print(lst)
     # m.write("{} \n".format(lst))
