@@ -9,7 +9,7 @@ class TournamentITFSerializer(serializers.ModelSerializer):
 class PlayerRankingsSerializerMS(serializers.ModelSerializer):
     class Meta:
         model = PlayerRankingsMS
-        fields =('name','rank','movement','dob','events','points','ageGroup','category')
+        fields =('name','rank','movement','dob','events','points','agegroup','category')
 
 class TournamentFSCSerializer(serializers.ModelSerializer):
     class Meta:

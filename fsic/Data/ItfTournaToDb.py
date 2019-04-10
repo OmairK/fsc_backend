@@ -11,7 +11,7 @@ def month_to_int(mon):
             return mon
 
 
-conn = psycopg2.connect(database="mydatabase_phase1", user="postgres",host='127.0.0.1', password="test123",port=5432)
+conn = psycopg2.connect(database="fsc_database", user="postgres",host='127.0.0.1', password="test123",port=5432)
 cur = conn.cursor()
 for lines in f:
     lst = [None]*9

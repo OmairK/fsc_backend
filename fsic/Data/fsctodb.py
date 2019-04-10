@@ -1,7 +1,7 @@
 import psycopg2
 import json
 
-conn = psycopg2.connect(database="mydatabase_phase1", user="postgres",host='127.0.0.1', password="test123",port=5432)
+conn = psycopg2.connect(database="fsc_database", user="postgres",host='127.0.0.1', password="test123",port=5432)
 curr = conn.cursor()
 
 playerR = open('fsc.json','r')

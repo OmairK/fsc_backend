@@ -29,7 +29,6 @@ post==2019.3.22
 psycopg2==2.7.7
 public==2019.3.22
 Pygments==2.3.1
-pymongo==3.7.2
 pytz==2018.9
 query-string==2019.3.22
 razorpay==1.1.1
