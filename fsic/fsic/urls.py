@@ -19,7 +19,9 @@ from rest_framework import routers
 from users import views as user_views
 from rest_framework.authtoken import views as authentication_views
 from rest_framework.documentation import include_docs_urls
+from django.conf.urls.static import static
 
+from django.conf import settings
 router = routers.DefaultRouter()
 
 urlpatterns = [
@@ -32,6 +34,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-token-auth/',authentication_views.obtain_auth_token, name = 'api-token-auth'),
         
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

@@ -57,7 +57,7 @@ class UserProfile(models.Model):
         null=True
         )
     player_id = models.AutoField(primary_key=True)
-    profile_photo = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
+    profile_photo = models.ImageField(upload_to='images/', height_field=None, width_field=None, max_length=None)
     
     class Meta:
         ordering = ('name',)

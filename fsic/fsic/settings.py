@@ -151,6 +151,10 @@ STATIC_ROOT= os.path.join(BASE_DIR,'static')
 
 STATIC_URL = '/static/'
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
+
 EMAIL_BACKEND = 'django.core.mail.backends.smpt.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
