@@ -20,7 +20,7 @@ for lines in playerJs:
     h = lines['age_group']
     d = lines['category'][:9]
      
-    curr.execute("INSERT INTO tournaments_playerrankingsms(name,rank,movement,dob,events,points,agegroup,category) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",(b,a,c,e,f,g,h,d))
+    curr.execute("INSERT INTO tournaments_playerrankingsms(name,rank,movement,dob,events,points,age_group,category) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",(b,a,c,e,f,g,h,d))
     conn.commit()
 
 print('Player Rank To DB : CODE 200')
