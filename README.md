@@ -19,7 +19,7 @@ $ service postgresql start
 $ sudo su postgres
 $ psql
 $ \l
-$ CREATE DATABASE mydatabase_phase1;
+$ CREATE DATABASE fsc_database;
 ```
 
 #### Django setup:
@@ -30,7 +30,7 @@ $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py runserver
 ```
-- Filling the database with data
+- Filling the database with test database
 ```
-$ ./load_datappytho
+$ ./load_data
 ```

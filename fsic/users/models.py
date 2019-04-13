@@ -27,37 +27,36 @@ class UserProfile(models.Model):
         null=True,
         )
     city = models.CharField(
-        max_length=50,
+        max_length=100,
         null=True,
         )
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     home_club = models.CharField(
-        max_length=50,
-        null=True,
+        max_length=100,
         )
     date_of_birth = models.DateField( 
         auto_now=False, 
         auto_now_add=False,
         )
-    contact_no = models.IntegerField(null=True)
+    # contact_no = models.BigIntegerField(null=True)
     profession = models.CharField( 
-        max_length=50,
-        null=True,
+        max_length=100,
         )
     user_email = models.EmailField( 
         max_length=254,
         )
     role_model = models.CharField(
         max_length=100,
-        null=True,
         )   
     cien_no = models.CharField(
         max_length=10,
         unique=True,
-        null=True
+        null=True,
         )
     player_id = models.AutoField(primary_key=True)
-    profile_photo = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
+    profile_photo = models.URLField(
+        max_length=200,
+        null=True)
     
     class Meta:
         ordering = ('name',)

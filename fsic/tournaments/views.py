@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
+from rest_framework.parsers import FileUploadParser
 from django.http import HttpResponse
 from tournaments.serializers import *
 from tournaments.models import *
@@ -32,6 +32,7 @@ class PlayerRankingMS(generics.ListAPIView):
     """
     List Player Ranking Male Singles/Doubles
     """
+    parser_classes = (FileUploadParser,)
     queryset = PlayerRankingsMS.objects.all()
     serializer_class = PlayerRankingsSerializerMS
 

@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'fsic.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase_phase1',
+        'NAME': 'fsc_database',
         'USER': 'postgres',
         'PASSWORD': 'test123',
         'HOST': '127.0.0.1',
@@ -150,6 +150,11 @@ USE_TZ = True
 STATIC_ROOT= os.path.join(BASE_DIR,'static')
 
 STATIC_URL = '/static/'
+
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
