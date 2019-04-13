@@ -22,7 +22,7 @@ class TournamentITF(models.Model):
         null=True)
 
     def __str__(self):
-        return self.name
+        return self.tournament_name
 
     class Meta:
         ordering = ['start_date']
