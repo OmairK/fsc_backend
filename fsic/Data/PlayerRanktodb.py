@@ -7,18 +7,19 @@ curr = conn.cursor()
 curr.execute("Truncate tournaments_playerrankingsms")
 conn.commit()
 
-playerR = open('PlayerRanks.json' , 'r')
+playerR = open('PlayerRankMock.json' , 'r')
 playerJs = json.load(playerR)
 
 for lines in playerJs:
-    a = lines['Rank']
-    b = lines['Player']
-    c = lines['Movement']
-    e = lines['DOB']
-    f = lines['Events']
-    g = lines['Points']
-    h = lines['Age Group']
-    d = lines['Type'] 
+    a = lines['rank']
+    b = lines['category'][-3:]
+    c = lines['movement']
+    e = lines['dob']
+    f = lines['movement']
+    g = lines['points']
+    h = lines['age_group']
+    d = lines['category'][:9]
+     
     curr.execute("INSERT INTO tournaments_playerrankingsms(name,rank,movement,dob,events,points,agegroup,category) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",(b,a,c,e,f,g,h,d))
     conn.commit()
 

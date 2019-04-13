@@ -30,7 +30,7 @@ $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py runserver
 ```
-- Filling the database with data
+- Filling the database with test database
 ```
 $ ./load_data
 ```

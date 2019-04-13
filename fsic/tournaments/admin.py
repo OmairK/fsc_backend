@@ -7,4 +7,4 @@ from .models import TournamentFSC,TournamentITF
 
 
 admin.site.register(TournamentFSC)
-admin.site.register(TournamentITF)
+admin.site.register(TournamentITF) 
