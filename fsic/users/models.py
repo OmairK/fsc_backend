@@ -55,7 +55,7 @@ class UserProfile(models.Model):
         )
     player_id = models.AutoField(primary_key=True)
     profile_photo = models.URLField(
-        max_length=200,
+        max_length=1000,
         null=True)
     
     class Meta:
