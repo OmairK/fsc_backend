@@ -15,11 +15,11 @@ def form(request):
     Function to send email to the client regarding CIEN Form
     """
     subject = "New entry through the FSC app"
-    from_email = settings.EMAIL_HOST_USER
+    from_email = settings.EMAIL_USER
     to_email = settings.EMAIL_RECIPIENT
     body = request.data
 
-    message = '<br/>'.join(['%s : %s' % (key, value)
+    message = '\n'.join(['%s : %s' % (key, value)
                             for (key, value) in body.items()])
 
     if subject and message:
