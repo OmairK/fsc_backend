@@ -54,7 +54,8 @@ class UserProfile(models.Model):
         null=True,
         )
     player_id = models.AutoField(primary_key=True)
-    profile_photo = models.URLField(
+    profile_photo = models.ImageField(
+	upload_to='images/',
         max_length=1000,
         null=True)
     
