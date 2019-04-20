@@ -103,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fsc_database',
         'USER': 'postgres',
-        'PASSWORD': 'test123',
+        'PASSWORD':'test123',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -147,11 +147,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_ROOT= os.path.join(BASE_DIR,'static')
-
+STATIC_ROOT= '/home/fsc/server/fsc_backend/fsic/static/'
 STATIC_URL = '/static/'
-
-
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
