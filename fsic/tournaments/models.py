@@ -31,7 +31,7 @@ class TournamentITF(models.Model):
 class PlayerRankingsMS(models.Model):  # Male Singles/Doubles
     name = models.CharField(max_length=150)
     rank = models.IntegerField()
-    movement = models.IntegerField()
+    movement = models.CharField(max_length = 20)
     dob = models.IntegerField()
     events = models.IntegerField()
     points = models.FloatField()
